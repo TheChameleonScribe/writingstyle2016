@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding My 2016 Writing Style</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+        body, html {
+            margin: 0; 
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+            font-family: 'Garamond', serif;
+            background-color: #f8f8f8;
+            overflow: hidden;
+            caret-color: #3498db;
+        }
+
+        .container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+p[contenteditable="true"]:focus {
+    outline-color: gray;
+  }
+
+  p[contenteditable="true"] {
+    transition: 700ms cubic-bezier(0.36, 0, 0.66, -0.56);
+    font-variation-settings: "wght" 450;
+  }
+
+  p[contenteditable="true"]:hover {
+    font-variation-settings: "wght" 582; 
+  }
+.section {
+    flex: 0 0 100vw;
+    height: 100vh;
+    scroll-snap-align: start;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+.section::after {
+  content: "Yokseekan";
+  display: block;
+  font-size: xx-large;
+  color: blueviolet;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 900;
+  margin-top: 8px;
+}
+
+h1, h2, h3, h4 {
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 10px;
+}
+.excerpter {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px; /* Adjust max-width as needed */
+    margin: 0 auto; /* Center align on the page */
+}
+
+.excerpt {
+    position: relative;
+    background-color: #f9f9f9;
+    border-left: 5px solid #3498db;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: black;
+    height: min-content;
+    overflow-y: scroll;
+}
+
+
+.excerpt p {
+    font-family:"Lexend", sans-serif;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    
+}
+
+
+.excerpt p::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::selection, li p::selection, div p::selection {
+    background-color: #3498db; /* Selected text background color */
+    color: #fff; /* Selected text color */
+    
+}
+
+
+
+.excerpt:hover {
+    transform: translateY(-5px); /* Lifts the card on hover */
+    color: initial;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Optional: Add a subtle gradient background on hover for more visual appeal */
+.excerpt:hover {
+    background-image: linear-gradient(45deg, #f9f9f9, #e9ecef);
+}
+
+
+.exit-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10; /* Ensures it's above everything */
+}
+
+.excerpt h2 {
+    color: #3498db;
+    font-size: 1.5em;
+    margin-top: 0;
+}
+
+
+
+.excerpt a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.excerpt a:hover {
+    color: #1e87c7;
+}
+
+.excerpt blockquote {
+    margin: 0;
+    padding: 15px;
+    background-color: #e9ecef;
+    border-left: 5px solid #3498db;
+    font-style: italic;
+}
+
+.excerpt blockquote p {
+    margin: 0;
+}
+
+.excerpt .author {
+    display: block;
+    margin-top: 10px;
+    color: #555;
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 800px) {
+    .excerpt {
+        padding: 15px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .excerpt {
+        padding: 12px;
+    }
+}
+
+
+.particularDiv {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: visible;
+
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
+
+
+/* Decorative Flourishes */
+.particularDiv::before {
+    content: '✨'; /* Insert decorative symbol */
+    display: block;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #999;
+}
+
+/* Stylish Hover Effect */
+.particularDiv:hover {
+    background-color: #e0e0e0;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+}
+
+.particularDiv p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 90%;
+    padding: 5px 8px;
+    background-color: #ffe6cc;
+    color: #cc6600;
+    font-size: 20px;
+    border-radius: 4px;
+    border: 1px solid #ffcc99;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.particularDiv p::selection {
+    background-color: #cc6600; /* Selected text background color */
+    color: #ffe6cc; /* Selected text color */
+}
+
+.navigation {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    padding: 15px; /* Increased padding for a luxurious feel */
+    border-radius: 15px; /* Rounded corners for elegance */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.nav-btn {
+    padding: 12px 24px; /* Slightly larger padding for comfort */
+    background-color: #007bff; /* Bold blue background */
+    color: white;
+    border: none;
+    border-radius: 8px; /* Rounded edges for a softer look */
+    cursor: pointer;
+    font-size: 16px; /* Increased font size for readability */
+    font-weight: bold; /* Bold text for emphasis */
+    text-transform: uppercase; /* Uppercase letters for a refined appearance */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.nav-btn:hover {
+    background-color: #0056b3; /* Darker shade on hover for contrast */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Hover shadow effect */
+}
+      
+
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #1e90ff, transparent);
+            margin: 40px 0;
+            position: relative;
+        }
+        hr::before {
+            content: '★';
+            display: inline-block;
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #f0f8ff;
+            padding: 0 10px;
+            color: #1e90ff;
+            font-size: 20px;
+        }
+
+        .hero {
+            position: relative;
+    height: 100vh; /* Adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    
+}
+
+#zz {
+    background-image: url("https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2600&q=80");
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+background-size: cover;
+background-position: center;
+filter:blur(20px);
+transition: all 0.3 ease;
+}
+
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 1;
+    transition: all 0.3s ease;
+    overflow: auto; /* Allows content to be scrollable if it exceeds container height */
+    max-height: calc(100vh - 40px); /* Limits height to 100% of viewport height minus padding */
+    box-sizing: border-box; /* Includes padding in element's total width and height */
+}
+.hero-content:hover {
+    transform: translateY(-5px); /* Lifts the card on hover */
+    color: initial;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Optional: Add a subtle gradient background on hover for more visual appeal */
+.hero-content:hover {
+    background-image: linear-gradient(45deg, #f9f9f9, #e9ecef);
+}
+
+
+#intro-text {
+    margin-bottom: 20px;
+    font-family:"Montserrat", sans-serif;
+    
+}
+
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: #333; /* Adjust as needed */
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #555; /* Adjust as needed */
+}
+
+.decorative-line {
+    width: 50px;
+    height: 3px;
+    background-color: #333; /* Adjust as needed */
+    margin: 10px auto;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Adjust as needed */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3; /* Adjust as needed */
+}
+        ol {
+    color: #333333;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    counter-reset: my-counter;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+ol p {
+    font-family: "Open Sans", sans-serif;
+}
+
+/* Styles for list items */
+ol li {
+    font-size: 18px;
+    line-height: 1.6;
+    padding: 10px 0;
+    border-bottom: 1px solid #dddddd;
+    position: relative;
+    counter-increment: my-counter;
+    list-style-type: none;
+    margin-left: 40px;
+    transition: all 0.3 ease;
+}
+
+/* Custom list item numbers */
+ol li::before {
+    content: counter(my-counter) ". ";
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    color: #ff6347; /* Tomato color */
+    position: absolute;
+    left: -40px;
+    top: 0;
+    line-height: 1.6;
+    
+}
+
+ol li:hover::before {
+    color:gray;
+}
+
+/* Last list item without border */
+ol li:last-child {
+    border-bottom: none;
+}
+
+/* Hover effects */
+ol li:hover {
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+
+/* Nested list styles */
+ol li ol {
+    margin-top: 10px;
+    border-left: 2px dashed #cccccc;
+    padding-left: 20px;
+}
+
+/* Nested list items */
+ol li ol li {
+    margin-left: 20px;
+    padding: 5px 0;
+    font-size: 16px;
+}
+
+/* Custom nested list item numbers */
+ol li ol li::before {
+    content: counters(list-counter, ".") ".";
+    color: #4682b4; /* Steel Blue color */
+}
+li p em {
+    font-family: 'Georgia', serif;
+  font-style: italic; /* Make the text italic */
+  color: #ff6347; /* Reddish-orange color */
+  background-color: #f9f9f9; /* Light blue background */
+  font-weight: bold; /* Make the text bold */
+
+  padding: 5px; /* Add padding for spacing */
+  border-radius: 10px; /* Rounded corners */
+  position: relative;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  display: inline-block; /* Ensure block properties */
+}
+li p em::selection {
+  color: #fff; /* Text color when selected */
+  background-color: #ff6347; /* Background color when selected */
+}
+li p em:hover{
+    background-color: #e0e0e0;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+    color: gray; /* Reddish-orange color */
+    transition: all 0.3s ease;
+}
+
+.particularDiv p:hover{
+    background-color: #e0e0e0;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+    color: gray; /* Reddish-orange color */
+    border: 1px solid gray;
+    transition: all 0.3s ease;
+}
+h2 {
+    font-family: 'Playfair Display', serif; /* Strong Google font */
+    font-size: 3.5rem; /* Large font size */
+    text-align: center; /* Centered alignment */
+    color: #2c3e50; /* Deep blue color */
+    text-transform: uppercase; /* Uppercase letters */
+    margin-bottom: 2rem; /* Space below the heading */
+    position: relative; /* Relative positioning for decoration */
+  }
+
+  h2::before,
+  h2::after {
+    content: '';
+    position: absolute;
+    height: 0.3rem; /* Thickness of the decorative lines */
+    background-color: #3498db; /* Decorative line color */
+    width: 40%; /* Width of the decorative lines */
+    top: 50%; /* Positioning */
+    transform: translateY(-50%); /* Centering vertically */
+  }
+
+  h2::before {
+    left: 0; /* Positioned from the left */
+  }
+
+  h2::after {
+    right: 0; /* Positioned from the right */
+  }
+
+  @media (max-width: 600px) {
+    h2::before,
+    h2::after {
+      width: 0%; /* Further reduced width for smaller screens */
+    }
+
+  }
+
+  li p em:hover::after, li .particularDiv p:hover::after {
+    content: '';
+    position: absolute;
+    bottom: calc(100% + 10px); /* Positioning above the element */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 0 10px;
+    border-color: #555 transparent transparent transparent; /* Arrow color and placement */
+    z-index: 0;
+
+}
+
+li p em:hover::before,  li .particularDiv p:hover::before {
+    content: attr(data-tooltip); /* Show tooltip text */
+    position: absolute;
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-weight: 600;
+    bottom: calc(100% + 15px); /* Positioning above the element */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 24px;
+    background-color: #555;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 18px;
+    line-height: 1.5;
+    width: 300px;
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    mask-image: linear-gradient(90deg, rgba(0,0,0,0.14329481792717091) 0%, rgba(0,0,0,1) 5%, rgba(0,0,0,1) 95%, rgba(0,0,0,0.09007352941176472) 100%);
+    text-shadow: 
+    1.4px 1.4px 0px #000, 
+    -1.4px -1.4px 0px #000, 
+    1.4px -1.4px 0px #000, 
+    -1.4px 1.4px 0px #000;
+    background-image: url("https://i.pinimg.com/originals/2f/bd/a9/2fbda9c7f3353c6ecfdbe38e9c4b3b7a.gif");
+  background-size: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+        
+}
+
+li p em:hover::before,  li .particularDiv p:hover::before {
+    opacity: 1; /* Show tooltip on hover */
+}
+
+.particularDiv p {
+    position: relative;
+}
+
+h3 {
+  font-family: 'Google Font', sans-serif; /* Replace 'Google Font' with your desired font */
+  font-size: 28px; /* Adjust as needed */
+  font-weight: bold;
+  color: #333; /* Adjust color to suit your theme */
+  margin-bottom: 15px; /* Space below heading */
+  text-transform: uppercase; /* Uppercase for added emphasis */
+  letter-spacing: 1px; /* Increased letter spacing for clarity */
+  line-height: 1.4; /* Line height for readability */
+  border-bottom: 2px solid #999; /* Underline effect */
+  padding-bottom: 5px; /* Space below underline */
+}
+
+/* Styling for h4 */
+h4 {
+  font-family: 'Google Font', sans-serif; /* Replace 'Google Font' with your desired font */
+  font-size: 24px; /* Adjust as needed */
+  font-weight: bold;
+  color: #555; /* Adjust color to suit your theme */
+  margin-bottom: 12px; /* Space below heading */
+  text-transform: capitalize; /* Capitalize for varied style */
+  letter-spacing: 0.8px; /* Slightly increased letter spacing */
+  line-height: 1.3; /* Line height for readability */
+  border-bottom: 1px solid #ccc; /* Underline effect */
+  padding-bottom: 3px; /* Space below underline */
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section">
+            <header class="hero">
+                <div id="zz" class="blurred"></div>
+                <div class="hero-content">
+                    <div id="intro-text">
+                        <h1>Understanding My 2016 Writing Style</h1>
+                        <p>To explain this post, this post goes into depth with regard to how I wrote back in 2016. I was not satisfied with modernizing and formalizing my writing, because I felt that it ruined the entire feel of the story and how I wrote it. I had a particular style, and my perception has changed regarding older works I've made, whether stories or games. For a long while, I believed that I could modernize my older games and stories, but I see now the value in their cultural characteristics, style, and accompanying limitations.</p>
+                        <div class="decorative-line"></div>
+                        <p>Contributing to this was the incompatibility I experienced while attempting to modernize my older writings with my now-outdated framework, which I view now as rational and objectivist without making room for the pluralist vastness and richness of the past. So this post represents my desire to be more well-rounded in my assessment and continuation of the past, not that of rational, objectivist, presentist removal, but that of respecting the past.</p>
+                        <button class="cta-button"  onclick="closeButton(this.parentNode.parentNode)">Start Reading</button>
+                    </div>
+                </div>
+            </header>
+    <h2>Excerpts</h2>
+    <div class="excerpter">
+    <div class="excerpt">
+        <h3>Excerpt 1:</h3>
+        <p>"It's time! Ahh." I said to myself gladly while stretching my back. Before leaving, I walked to the town hall to say good-bye, "Oh Samie!" Myia sobbed and tried to impersonate a cute baby. "It's been really good having you here bro!", Josh said, as we punched each other's hands; we called it "adventurer's fist". "Let's meetup again, someday, somehow.", I told him gladly. "God bless you bro, you totally were a miracle to my adventurer life…Don't worry, I was fine even without you.", Josh mocked me. Myia laughed hard, but I looked beaten. I said my "byes" to the town. Before I stepped out of the border, I prayed a short but powerful prayer.</p>
+    </div>
+    
+    <div class="excerpt">
+        <h3>Excerpt 2:</h3>
+        <p>One week later, I woke up to licks and a noxious aroma. I opened my eyes to spot a horse licking my head, I soon realized the "aroma" was "horsey's" dung. Not the best way to wake up, so I pushed "horsey" away so I could stand up. "Hey Sir Jones, thanks for the stay.", I was about to leave until my kind instinct kicked in. I left feeling great. "Thank you so much Samuel!", Jones called. I never realized until nine hours later; "How did he know my name?", I thought as I entered the gate of  Zion; named after one of the verses of the Bible. I chose the town by the way, so you can blame me. I walked up to town, curious villagers gathering around a cave. "Hey Sam!", Peter called out to me from the crowd. "Wow, hey Pete!", I shouted out as he ran desperately to me. "Sam Sam Sam!", Peter exclaimed, "The cave's entrance is locked up!". "Isn't there town-knights here?", I asked quickly, Peter declined, "No, what do we do?". "We better do it then!", I exclaimed. Meanwhile Timothy and David were running from a horde of cave golems. "It's nice…to have you back!" David said, paused, and said. Timothy laughed and said, "Talking didn't work out, let's try fighting!", David agreed, "Right!". Timothy threw two bolas one by one, Even with rare Jarvan bolas; they easily broke free.</p>
+    </div>
+    <div class="excerpt">
+
+        
+        <h3>Excerpt 3:</h3>
+        <blockquote>
+            <p><em>NOTE : I started last month, especially because I had to make sure I got the perfect story. Thanks for checking out!</em></p>
+            </blockquote>
+            <hr>
+            <p><em>Peter and me dashed to the left gate toward the woods. I was about to call David, but we would reveal our whereabouts, so we kept on going. I heard footsteps behind us, so we darted to a nearby tree to hide. As it got louder and louder, I readied my sword.</em></p>
+            <hr>
+            <p>As I looked at our sylvan town, I saw someone familiar coming towards me. "Hi Sam!", Christie called eagerly, "I have something to tell you!" (<em>Christie</em> is our newest girl-ish girl teammate; her 3rd week, I don't even know her age). Then I answered once she got closer, "What is it?! A new quest? A new attack?". Then Christie frowned a bit, "Well, it's a gift, just look what's inside". Then she handed it to me, eager for me to open it, I dropped my book, "A sword, level 18!? Wow, this is really expensive, thanks Chris!", I said gratefully. "I hate it when you call me that.", Christie frowned, "Come on, it's just like you calling me Sam.", "It's a boy's name.", she sighed, making a face that looked like -_-. "It's really nice to have you guys back.", she said slowly and smiled. I said, and smiled "Me too.", I paused. "Well, thanks for this really cool sword!", I said as I looked at my sword joyfully, then said,"Okay, I'm going home to wake them up.". "Bye!", Christie said as I rushed back home.</p>
+            <p>*THUD* *THUD*, "WAKE UP!", as I knocked on all three doors simultaneously. "GET OUT!", Peter shouted (He's <em>Peter</em>, 17 years old, smart in strategy; very grumpy in the morning, the rest; talk-talk-talk), David said, "Wait, Wait, Wait!", (<em>David</em>, oldest in the team; 22 years old, known for being "Mr. Grumble", and mostly 'chessy', opps! Sorry Pete! I mean 'Cheesy") Timothy was out on a quest until later at night (<em>He</em>'s our youngest brother, draws when alone, creative, 14 years old, A good assassin).  30 minutes later, they got out of their rooms, finally, I almost slept sitting on the chair. 9 in the morning, "Hey guys, ea-", I was interrupted as Timothy called, "Hey everyone! I'm back!", then he noticed me, "Samuel!" he said with a hug. "How did it go?", I asked, Timothy unpacked his things then answered, "Cool! How about you Sam?", "Oh, great to be back!". "Hey everybody, I have something to tell you.". "What?!", We three asked, Timothy got a paper out of his bag, and showed it to us. "Permit to <strong>Rank</strong> <strong>3</strong> quests.", We all congratulated him and thanked <em>God</em>, then as we settled down to eat, I asked him excitedly, "So Tim, what's your first quest for <strong>Rank</strong> <strong>3</strong>?". "Oh yeah.", as Timothy got the note out, he warned, "I don't think you'll like this.". "Missbign <strong>Draknok</strong>.", then Peter pointed out (as usual), "For real, wrong spelling?!", Then I shared an obvious idea, "We can help Timmy on his quest.". Timothy looked at me with innocent eyes, so I told Timothy; David's fears, "Don't worry, we'll tell the <strong>Lawkeepers</strong> that you'll have it.", "But!", Peter and David called, Then I nudged them both, "We're totally gonna give all the rewards to Timothy, right guys?!", Peter joked, "Yeah, totally.", but David grumbled, "Give away everything.".</p>
+            <hr>
+            <p>"Christie, are you there?", I called, then we could hear Christie mumbling 'Help!'. We were alerted so we banged the door, Looking for Christie, but she was nowhere to be seen, "There, they jumped through the window!", David used his <strong>Eagle Vision</strong>. We chased after them, Timothy <strong>shunpo-ed</strong> near them and threw a couple of bolas but he created a <strong>physical shield</strong> around him. David slowed <em>the</em> <em>kidnapper</em> with a spell, I <strong>amplified</strong> Peter's <strong>strength</strong> as Peter dashed to bat him toward us, then Peter swung so strong that it broke the <strong>physical shield</strong>. <em>The</em> <em>kidnapper</em> was alarmed, dropping Christie, before teleporting away, <em>the</em> <em>kidnapper</em> said, "You're getting better, Peter.". "A girl? the whole time? She looked like a boy!", Peter mumbled, "Hey Christie, are you all right?", I asked her, she groaned back.</p>
+            <hr>
+            <p>As Christie woke up to see the moonlight, she could hear me chatting on my way to her,</p>
+            <p>"I wasn't even able to use the sword she gave me.". As we saw her open her eyes, "Oh Christie, Are you okay?!", We all asked except Peter; who was mumbling, "Yes, I am okay, why?", "I'm okay, don't worry.", she said softly. "It's just a good thing you guys were there, Thank <em>God</em> you went, What were you guys doing there anyway?". "We were umm--- gonna tell you about Timothy's first mission for <strong>Rank 3</strong>, but you don't have to go.", I said sheepishly, "No, its fine, I'm fine--*silence*--what's the quest's requests?". "Ha-ha-ha, really funny.", Peter actually laughed after then went back to the quest, "Well Christie, we have to look for the 'Missing <strong>Draknok</strong>'.", she was confused she said "But, that was about a month ago, about the time Janessa first arrived here.". "Why did they bring it up just now?", David asked, not expecting an answer, "Actually, many people have been dared to go, but when they did; they were never seen again.". "When are we gonna leave?", Timothy asked, "We leave early tomorrow at 3 in the morning.", Then David asked, "Aren't the <strong>Draknok</strong> extinct after the thing?". I answered him nervously, "Well, that's what we're gonna find out.", "Well, goodnight everyone! Bye!", Christie called as she dashed away. "Okay, let's go home.", David announced, "Yup, so sleepy.", I said, "Yeah, us too.", Timothy said. As we were going home, Peter argued about not being sleepy, as we reached bed, a series of loud knocks were heard from the door; *THUD* *THUD* *THUD* *THUD*.  We all went out to check, I whispered to them to be ready for trouble, as David opened the door, a tall man was there to meet him, then he said sheepishly as he saw us, "I have a message for Timothy.", "That's me.", Timothy said as he went closer, "Here you go--<em>God</em> guide you on your quest.", he said with a smile then left. "This is good news!", Timothy exclaimed, then Timothy read it out loud, "After reading this, Please go to your <strong>coach</strong>.You may bring up to five party members, all rewards will be shared unless unwanted by party members, reward for this quest is 2000 <strong>gems</strong>. (NOTE : This is a hard quest for a "<strong>Rank 3</strong> first timer", that's why we suggest you bring David and Samuel as party members.) Rules may change on some occasions, Thank you, <em>God</em> guide you on your quest!". When Peter didn't hear his name, he argued, David's face was like, "GEMMSSSS!". "Okay guys, time to sleepppppppp!", I sang.</p>
+            <hr>
+            <p><em>Part 2/2 of Chapter 1</em></p>
+            <p>"It's time to get up maggots!" David shouted with a deep voice, "Heads up!" I shouted with a solder-like voice. "Get ready for battle!" I shouted near Peter, while David just tapped Timothy. Peter's same please-don't-wake-me-up morning routine;</p>
+            <p>"EHHHHHHHHHHHHHHHH!", I was like "No crying here newbie!", Then Peter suddenly changed state, "Oh yeah, time to leave.". "Peter is so weird." I thought to myself, then Peter was alerted "HEY! I felt someone think I was crazy! Who is it?!", "NOT ME! TOTALLY NOT ME!" David panicked (wait, he panicked?), which made it so obvious. "How dare you mock the almighty PETER!" Peter shouted like a mad monster. David changed subject when he said, "Time to call Christie.".</p>
+            <hr>
+            <p>"Hey Christie!" I said, "I'm still here!" Christie shouted, giggling, "I was only a little 'bit-ly' worried." I told her with a cheesy grin. "Get ready for the unknown!--or maybe it's just a myth." David mumbled, Peter resisted the "force", "NO! It's not a myth! It's evidential proof!". I'm guessing Christie was like "boys, so weird.", then David said, "Okay, let's go to Janessa to see what she thinks."</p>
+            <p>"Hi Janessa, Have you heard?", Christie asked her as we closed the door. "What about?", she asked,  (By the way, <em>Janessa</em> is our coach. Compared to Christie; she's less girl-ish, more captain-ish, 21 years old) then Peter answered sheepishly (Pete's always been like that to her since we first met her; less than a month ago), "A new quest, Missi-", Janessa interrupted, "Yes, that's our 2nd big quest." (We don't really get big quests, even if you're <strong>Rank 3</strong>, you need to be the town's successors). The door opened, "Janessa? um--", we recognised that voice almost instantly, she was shocked to see us that's for sure. "Tia, wait, it's too late.", Janessa told <em>the almost-kidnapper</em> to meet us. She's pretty slim, I guess that's why she's good for her class. "Uhh--Hi, My name is Tia, Janessa's sister.", she said sheepishly. We were 'caught unguarded' there, we dropped the "title" on Tia (<em>Tia</em> is Janessa's sister, that's all--for now).</p>
+    </div>
+  
+</div>
+
+        </div>
+      
+        <div class="section">
+            <h2>Guideline:</h2>
+            <ol>
+                <li>
+                    <p>The author is fine with using sentences where the direct quotation comes before the dialogue tag like in the following.</p>
+                    <p><em>"It's time! Ahh." I said to myself gladly while stretching my back.</em></p>
+                </li>
+                <li>
+                    <p>The author does not use comma with direct quotations as observed in the above-stated sentence example.</p>
+                </li>
+                <li>
+                    <p>The author prefers using present participles in adverbial phrases as seen in the following.</p>
+                    <p><em>Before leaving,</em></p>
+                </li>
+                <li>
+                    <p>The author groups can be observed grouping scenes in one paragraph, including dialogue and actions by different characters, such as the foregoing narrative excerpt.</p>
+                </li>
+                <li>
+                    <p>The author has been seen putting comma outside of the direct quotation marks to mark the dialogue tag even if there is already an ending punctuation inside the quotation marks. This is seen in the following.</p>
+                    <p><em>"It's been really good having you here bro!", Josh said,</em></p>
+                    <p><em>"God bless you bro, you totally were a miracle to my adventurer life…Don't worry, I was fine even without you.", Josh mocked me.</em></p>
+                    <p><em>"Let's meetup again, someday, somehow.", I told him gladly.</em></p>
+                    <p>However, he also is not very strict with this preference, as seen in the following.</p>
+                    <p><em>"It's time! Ahh." I said to myself gladly while stretching my back.</em></p>
+                    <p>In addition, the rule 5 placement is not limited to commas, as he has used periods as well, even after a period inside the quotes. This is observed in the following sentence from the excerpt.</p>
+                    <p>...<em>Peter declined, "No, what do we do?".</em></p>
+                    <p>...<em>David agreed, "Right!".</em></p>
+                    <p>...<em>"But, that was about a month ago, about the time Janessa first arrived here.".</em></p>
+                    <p>To add to this, the author has done the comma placement of Rule 5 even without a dialogue tag. This is evidenced by the following.</p>
+                    <p><em>Not the best way to wake up, so I pushed "horsey" away so I could stand up. "Hey Sir Jones, thanks for the stay.", I was about to leave until my kind instinct kicked in.</em></p>
+                </li>
+            </ol>
+        </div>
+        <div class="section">
+            <h2>Page 2:</h2>
+            <ol style="counter-reset: my-counter 5;">
+                <li>
+                    <p>The author prefers two-clause sentences, tending to add action beats in the same sentence as the dialogue tag, like in the following.</p>
+                    <p>...<em>Josh said, as we punched each other's hands;</em></p>
+                    <p>However, there are exceptions, such as in the following.</p>
+                    <p><em>I told him gladly.</em></p>
+                </li>
+                <li>
+                    <p>The author prefers first-person perspective and rarely uses introspective or more omniscient narration.</p>
+                </li>
+                <li>
+                    <p>The author has used a comma instead of a period to end the sentence. The following demonstrates this.</p>
+                    <p><em>Before leaving, I walked to the town hall to say good-bye, "Oh Samie!" Myia sobbed and tried to impersonate a cute baby.</em></p>
+                    <p><em>I walked up to town, curious villagers gathering around a cave.</em></p>
+                    <p>Furthermore, he has went further with this eight rule, even at times making the first word of the sentence after the comma capitalized, as observed in the following.</p>
+                    <p><em>Timothy threw two bolas one by one, Even with rare Jarvan bolas; they easily broke free.</em></p>
+                </li>
+                <li>
+                    <p>The author favors semi-colons, as he had used 4 of them in the above-stated paragraph, which is comprised of 352 words. He can be seen using them as a comma and as a period in the following, which include all four semi-colons in the two foregoing excerpts.</p>
+                    <p><em>"It's been really good having you here bro!", Josh said, as we punched each other's hands; we called it "adventurer's fist".</em></p>
+                    <p><em>"Thank you so much Samuel!", Jones called. I never realized until nine hours later; "How did he know my name?", I thought as I entered the gate of  Zion; named after one of the verses of the Bible.</em></p>
+                    <p><em>Timothy threw two bolas one by one, Even with rare Jarvan bolas; they easily broke free.</em></p>
+                </li>
+                <li>
+                    <p>The author has shown that during his first-person narration, the main character can be noticed narrating as if they were explaning to the audience directly. This is seen in the following.</p>
+                    <p><em>I thought as I entered the gate of  Zion; named after one of the verses of the Bible. I chose the town by the way, so you can blame me.</em></p>
+                </li>
+            </ol>
+        </div>
+        <div class="section">
+            <h2>Page 3:</h2>
+            <ol style="counter-reset: my-counter 10;">
+                <li>
+                    <p>The author prefers writing nicknames with double quotes and non-capitalized as opposed to capitalizing them. This is seen is the following with 'horsey's' and 'horsey'.</p>
+                    <p>...<em>I soon realized the "aroma" was "horsey's" dung. Not the best way to wake up, so I pushed "horsey" away so I could stand up.</em></p>
+                    <p>However, Rule 11 does not apply titles. The following example of this rule is formatted in Markdown code blocks because of the use of bold and italics, which would conflict with my established use of italics to denote a quotation from the narrative excerpt.</p>
+                    <div class="particularDiv"> <p>"Don't worry, we'll tell the <strong>Lawkeepers</strong> that you'll have it."</p></div>
+                </li>
+                <li>
+                    <p>The author favors relatively short (only 201.44 words per average) scenes that are separated each by a horizontal line.</p>
+                </li>
+            </ol>
+            <h3>Other rules that are not particular to the author or that are less pivotal include the following.</h3>
+            <ol style="counter-reset: my-counter 12;">
+                <li>
+                    <p>The author has a preference for zero spaces between ellipses. Additionally, he uses the actual ellipsis symbol instead of just three periods. This is seen in the following.</p>
+                    <p><em>"God bless you bro, you totally were a miracle to my adventurer life…Don't worry, I was fine even without you.", Josh mocked me.</em></p>
+                    <p><em>"It's nice…to have you back!" David said, paused, and said.</em></p>
+                </li>
+                <li>
+                    <p>The author uses bold and italicized text frequently, especially for spell names, magic, or attack names, except for unnamed projectiles and weapons. The following examples of this rule are in Markdown code blocks to avoid conflict.</p>
+                    <div class="particularDiv"> <p>David used his <strong>Eagle Vision</strong>. We chased after them, Timothy <strong>shunpo-ed</strong> near them and threw a couple of bolas but he created a <strong>physical shield</strong> around him.</p></div>
+                    <div class="particularDiv"> <p><i>The</i> <i>kidnapper</i> was alarmed, dropping Christie, before teleporting away, <i>the</i> <i>kidnapper</i> said, "You're getting better, Peter.".</p></div>
+                </li>
+                <li>
+                    <p>The author uses parenthesis a lot, and they are often very free-flowing and much more loose grammar-wise. This is evinced by the following, the first two of which also uses Markdown code blocks.</p>
+                    <div class="particularDiv"> <p>(<i>David</i>, oldest in the team; 22 years old, known for being "Mr. Grumble", and mostly 'chessy', opps! Sorry Pete! I mean 'Cheesy")</p></div>
+                    <div class="particularDiv"> <p>Timothy was out on a quest until later at night (<i>He's</i> our youngest brother, draws when alone, creative, 14 years old, A good assassin).</p></div>
+                    <p>...<em>then Peter pointed out (as usual)</em>...</p>
+                </li>
+            </ol>
+        </div>
+        <div class="section">
+            <h2>Page 4:</h2>
+            <ol style="counter-reset: my-counter 15;">
+                <li>
+                    <p>The author uses emoticons. This is seen in the following.</p>
+                    <p><em>"I hate it when you call me that.", Christie frowned, "Come on, it's just like you calling me Sam.", "It's a boy's name.", she sighed, making a face that looked like -_-.</em></p>
+                </li>
+                <li>
+                    <p>The author writes flash forward scenes at the start of chapters, italicizing the entire text of these scenes. This is seen in the following.</p>
+                    <div class="particularDiv"> <p><i>Peter and me dashed to the left gate toward the woods. I was about to call David, but we would reveal our whereabouts, so we kept on going. I heard footsteps behind us, so we darted to a nearby tree to hide. As it got louder and louder, I readied my sword.</i></p></div>
+                </li>
+            </ol>
+            <h4>Other much more minor style rules include the following.</h4>
+            <ol style="counter-reset: my-counter 17;">
+                <li>
+                    <p>Words being cut off partially as opposed to being cut off after the full word is spelled, with a hyphen instead of an em dash.</p>
+                    <p>..."Hey guys, ea-"...</p>
+                    <p>...<em>"A new quest, Missi-"</em>...</p>
+                </li>
+                <li>
+                    <p>The use of "?!"</p>
+                    <p><em>"HEY! I felt someone think I was crazy! Who is it?!"</em>...</p>
+                </li>
+                <li>
+                    <p>All-caps for emphasis.</p>
+                    <p><em>EHHHHHHHHHHHHHHHH</em></p>
+                </li>
+                <li>
+                    <p>Repetition of letters</p>
+                    <p><em>David's face was like, "GEMMSSSS!". "Okay guys, time to sleepppppppp!", I sang.</em></p>
+                </li>
+                <li>
+                    <p>The spelling out of a whole phrase as a hyphenated adjective</p>
+                    <p>...<em>please-don't-wake-me-up morning routine</em>...</p>
+                </li>
+                <li>
+                    <p>The use of "like" to denote indirect speech that is styled as if direct and without capitalization</p>
+                    <p><em>I'm guessing Christie was like "boys, so weird."</em></p>
+                </li>
+                <li>
+                    <p>The use of "--" or "---" to denote an em dash or ellipsis</p>
+                    <p><em>"We were umm--- gonna tell you about Timothy's first mission for Rank 3, but you don't have to go."</em>...</p>
+                    <div class="particularDiv"> <p>"No, its fine, I'm fine--*silence*--what's the quest's requests?".</p></div>
+                </li>
+                <li>
+                    <p>The use of onomatopoeia (formatted as *THUD* with asterisks)</p>
+                    <div class="particularDiv"> <p>*THUD* *THUD*, "WAKE UP!"</p></div>
+                    <div class="particularDiv"> <p>As we were going home, Peter argued about not being sleepy, as we reached bed, a series of loud knocks were heard from the door; *THUD* *THUD* *THUD* *THUD*.</p></div>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div class="navigation">
+        <button class="nav-btn" id="prev">Previous</button>
+        <button class="nav-btn" id="next">Next</button>
+    </div>
+
+
+    <script>
+        const container = document.querySelector('.container');
+        const sections = document.querySelectorAll('.section');
+        const prevBtn = document.getElementById('prev');
+        const nextBtn = document.getElementById('next');
+        let currentSection = 0;
+
+        function updateButtons() {
+            prevBtn.disabled = currentSection === 0;
+            nextBtn.disabled = currentSection === sections.length - 1;
+        }
+
+        function scrollToSection(index) {
+            sections[index].scrollIntoView({ behavior: 'smooth' });
+            currentSection = index;
+            updateButtons();
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSection > 0) {
+                scrollToSection(currentSection - 1);
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSection < sections.length - 1) {
+                scrollToSection(currentSection + 1);
+            }
+        });
+
+        container.addEventListener('scroll', () => {
+            const scrollPosition = container.scrollLeft;
+            const sectionWidth = sections[0].offsetWidth;
+            const newSection = Math.round(scrollPosition / sectionWidth);
+            
+            if (newSection !== currentSection) {
+                currentSection = newSection;
+                updateButtons();
+            }
+        });
+
+        // Initialize buttons state
+        updateButtons();
+
+        // Handle keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft' && currentSection > 0) {
+                scrollToSection(currentSection - 1);
+            } else if (e.key === 'ArrowRight' && currentSection < sections.length - 1) {
+                scrollToSection(currentSection + 1);
+            }
+        });
+
+        // Handle touch events for mobile swipe
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        container.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        container.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50; // minimum distance for swipe
+            if (touchStartX - touchEndX > swipeThreshold && currentSection < sections.length - 1) {
+                scrollToSection(currentSection + 1);
+            } else if (touchEndX - touchStartX > swipeThreshold && currentSection > 0) {
+                scrollToSection(currentSection - 1);
+            }
+        }
+
+        const liElements = document.querySelectorAll('li p em, li .particularDiv p');
+
+liElements.forEach(emElement => {
+    const emText = emElement.textContent.trim(); // Get the text content of the em element
+    const excerptParagraphs = document.querySelectorAll('.excerpt p'); // Select all paragraphs in .excerpt
+
+    // Iterate through each excerpt paragraph to find matches
+    excerptParagraphs.forEach(p => {
+        const paragraphText = p.textContent.trim(); // Get the text content of the paragraph
+
+        // Check if the em text exists in the paragraph
+        if (paragraphText.includes(emText)) {
+            const startIndex = paragraphText.indexOf(emText); // Find the starting index of the em text
+            const endIndex = startIndex + emText.length; // Calculate the ending index
+
+            // Define the tooltip text with additional words before and after the match
+            const minn = Math.max(0, startIndex - 82)
+            const maxx = Math.min(endIndex + 82, paragraphText.length)
+            
+            let tooltipText = paragraphText.substring(
+                minn, // Ensure not to go out of bounds
+                maxx
+            ).trim();
+
+
+            if (minn !== 0 && minn !== startIndex) {
+                tooltipText ="~" + tooltipText 
+    }
+
+        if (maxx !== endIndex && maxx !== paragraphText.length) {
+                    tooltipText = tooltipText + "~" 
+        }
+
+            // Assign the tooltip text to the data-tooltip attribute of the em element
+            emElement.setAttribute('data-tooltip', tooltipText);
+            
+            // Stop iterating through paragraphs once match is found
+            return;
+        }
+    });
+});
+
+function closeButton(button) {
+    // Hide or remove the button itself
+    button.style.display = 'none';
+
+    // Adjust backdrop-filter for elements with class 'zz'
+    const unblur = document.getElementById("zz");
+    unblur.style.transition = "filter 0.5s ease-in-out"; // Set the transition duration and timing function
+unblur.style.filter = "none"; // Remove the blur effect
+}
+
+if (!/Mobi|Android/i.test(navigator.userAgent)) {
+  document.querySelectorAll('p').forEach(p => p.setAttribute('contenteditable', 'true'));
+}
+    </script>
+</body>
+</html>
